@@ -10,6 +10,15 @@
 2. Via mysql console create user 'root' with password 'parole123!'. TODO: move the db connection configuration to a single place, currently it's set multiple times in separate files.
 2. Run sql in the maindatabase.sql file to create tables
 
+## Run locally
+1. Start php backend: `php -S 127.0.0.1:8000 -t . `
+
+
+## TODOs
+* Fix loadskins.php
+* Fix chat the ajax function gets called multiple times a second
+* deduplicate code (e.g. db connection)
+* etc
 
 
 

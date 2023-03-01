@@ -1,15 +1,11 @@
 <?php
-//header("Content-Type: application/json");
+header("Content-Type: application/json");
 
 
 
-include 'db.php';
+include_once("db.php");
 
-
-  $dsn = 'mysql:dbname=game;host=127.0.0.1';
-  $user = 'root';
-  $password = 'parole123!';
-  $dbh = new PDO($dsn, $user, $password);
+  $dbh = create_db_connection();
   
   //$SEARCH = $_GET['locatedata'];
   ///$SEARCH = $_POST['locatedata'];

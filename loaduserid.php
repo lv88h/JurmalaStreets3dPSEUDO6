@@ -3,7 +3,7 @@
 
 
 
-include 'db.php';
+include_once("db.php");
 
 $username = $user_data['username'];
 

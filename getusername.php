@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include_once("db.php");
 //echo $location;
 $user_id = $user_data['user_id'];
 
