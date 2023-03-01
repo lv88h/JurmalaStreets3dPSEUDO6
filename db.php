@@ -1,4 +1,5 @@
 <?php
+include_once("config.php");
 //ini_set('display_errors', 1);
 //ini_set('display_startup_errors', 1);
 //error_reporting(E_ALL);
@@ -8,30 +9,19 @@ session_start();
 
 //$sessionid = $_SESSION['user_id'];
 
-
-
-
-$host = '127.0.0.1';
-$db   = 'game';
-$user = 'root';
-$pass = 'parole123!';
-$charset = 'utf8mb4';
-
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
-try {
-     $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (\PDOException $e) {
-     throw new \PDOException($e->getMessage(), (int)$e->getCode());
+function create_db_connection() {
+     $options = [
+          PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+          PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+          PDO::ATTR_EMULATE_PREPARES   => false,
+      ];
+      try {
+           $pdo = new PDO(DB_DSN, DB_USER, DB_PASS, $options);
+           return $pdo;
+      } catch (\PDOException $e) {
+           throw new \PDOException($e->getMessage(), (int)$e->getCode());
+      }
 }
-
-
-
-
 
 
 
@@ -39,32 +29,10 @@ function logged_in2(){
 	
 $sessionid = $_SESSION['user_id'];
 	
-if(!empty($sessionid)){
+if(!empty($sessionid)) {
 	
-$host = '127.0.0.1';
-$db   = 'game';
-$user = 'root';
-$pass = 'parole123!';
-$charset = 'utf8mb4';
-
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
-try {
-     $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (\PDOException $e) {
-     throw new \PDOException($e->getMessage(), (int)$e->getCode());
-}
-
-
-
-
-
-
-
+     // TODO: remove the rest of duplicate db connection code
+     $pdo = create_db_connection();
 	$stmt = $pdo->prepare('SELECT * FROM users WHERE user_id = ?');
 	$stmt->execute(array($sessionid));
 	$user = $stmt->fetch();

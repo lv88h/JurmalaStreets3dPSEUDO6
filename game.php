@@ -733,43 +733,44 @@ echo $user_data['username'];
            ///update shito ik pa laikam ar chata table saturu, paradit visiem
            ///paradit tukshu vai pazudinat ja ieraksts veikts paris sekundes pirms
            
-           	var getchat = []; 
-           			window.setInterval(function(){
+// GETCHAT START. TODO: REENABLE
+//            	var getchat = []; 
+//            			window.setInterval(function(){
 
-                      $.ajax({
-                          type: "GET",
-                          async: false,
-                          url: 'getchat.php',
-                          data: {},
-                          success: function (data) {
-                                               getchat = data.split("*").map(String);
+//                       $.ajax({
+//                           type: "GET",
+//                           async: false,
+//                           url: 'getchat.php',
+//                           data: {},
+//                           success: function (data) {
+//                                                getchat = data.split("*").map(String);
 
-                          }
+//                           }
  
-                      });
-                      	}, 600);
+//                       });
+//                       	}, 600);
                       
-                          //for (var i = 0; i < getchat.length - 1; i++) {
-                          var uu;
-                          var location2;
-                          var location3;
-                          var location4;
-		window.setInterval(function(){
-		uu = getchat[0]
-		location2 = parseInt(obj[0]);
-		location3 = location2 + 185;
-		location4 = location3.toString();
-		console.log("uu", location4);
-		}, 600);
+//                           //for (var i = 0; i < getchat.length - 1; i++) {
+//                           var uu;
+//                           var location2;
+//                           var location3;
+//                           var location4;
+// 		window.setInterval(function(){
+// 		uu = getchat[0]
+// 		location2 = parseInt(obj[0]);
+// 		location3 = location2 + 185;
+// 		location4 = location3.toString();
+// 		console.log("uu", location4);
+// 		}, 600);
 		
-const foo = () => {
-this.add.text(location4,328, uu, { fontSize: '24px' });
-}
+// const foo = () => {
+// this.add.text(location4,328, uu, { fontSize: '24px' });
+// }
 
-		window.setInterval(function(){
-foo();
-		}, 600);
-
+// 		window.setInterval(function(){
+// foo();
+// 		}, 600);
+// GETCHAT END
 
 			
 

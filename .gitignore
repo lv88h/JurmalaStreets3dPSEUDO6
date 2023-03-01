@@ -1,0 +1,11 @@
+**/.tmp/**
+**/dist/**
+**/jsm/**
+**/node_modules/**
+/packages/**/package-lock.json
+**/screenshots/**
+/REVISION
+/REVISION_HISTORY
+/node_modules
+/test/**/*.tmp.test.js
+/typescript

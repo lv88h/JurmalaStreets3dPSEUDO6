@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include_once("db.php");
 
 
   $dsn = 'mysql:dbname=game;host=127.0.0.1';

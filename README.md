@@ -1,3 +1,28 @@
+# SM: Setup & recommendations
+1. Clone from github, don't download the zip. You lose git functionality otherwise.
+2. Install php, mysql, yarn. Use a package manager (brew on mac, apt on ubuntu etc)
+3. Run 'yarn install'. It installs js dependencies listed in package.json.
+4. For accessing the mysql database my recommendation is to use separate software, eg Datagrip, MySql Workbench etc. phpMyAdmin sucks IMO and is an outdated technology.
+5. Use an IDE: Visual Studio Code, PhpStorm, etc.
+
+## Database
+1. Create a mysql database 'game'
+2. Via mysql console create user 'root' with password 'parole123!'. TODO: move the db connection configuration to a single place, currently it's set multiple times in separate files.
+2. Run sql in the maindatabase.sql file to create tables
+
+## Run locally
+1. Start php backend: `php -S 127.0.0.1:8000 -t . `
+
+
+## TODOs
+* Fix loadskins.php
+* Fix chat the ajax function gets called multiple times a second
+* deduplicate code (e.g. db connection)
+* etc
+
+
+
+
 # JurmalaStreets3d
 3d web browser game
 FLAWS SO FAR: MULTIPLAYER DOES NOT WORK DUE FACT, PLAYER COORDINATES GET UPDATED BY TELEPORTATION FUNCTION, AND THAT CREATES STUTTERING AND DELAY.
